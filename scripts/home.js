@@ -173,48 +173,60 @@ let data= {
  };
 
  const div = document.querySelector(".all_box");
-
+ 
 //traer las datos de la  data //
 for (indice in data.events){
   data_values = data.events[indice];
 
   const seg_div = document.createElement('div');
   seg_div.classList.add('box');
+  seg_div.style.height= "520px";
+  seg_div.style.textAlign="center";
+  seg_div.style.fontFamily="time new roman";
 
   img = document.createElement("img");
   img.src = data_values.image;
 
   title = document.createElement('h2');
   title.textContent = data_values.name;
-  
-  const date = document.createElement('date');
+  title.style.fontFamily="time new roman";
+  title.style.margin="2px";
+
+
+  const date = document.createElement('p');
   date.textContent = "date: " + data_values.date;
 
-  const category = document.createElement('category');
+  const category = document.createElement('p');
   category.textContent = "category: " + data_values.category;
+  
 
-  const place = document.createElement('place');
+  const place = document.createElement('p');
   place.textContent = "place: " + data_values.place;
 
-  const capacity = document.createElement('capacity');
-  capacity.textContent = "place: " + data_values.capacity;
+  const capacity = document.createElement('p');
+  capacity.textContent = "capacity: " + data_values.capacity;
 
-  const estimate = document.createElement('estimate');
-  estimate.textContent = "estimate: " + data_values.estimate;
+  const assistance  = document.createElement('p');
+  assistance.textContent = "assistance: " + data_values.assistance;
+
+  const estimate= document.createElement('p');
+  estimate.textContent = "Price: " + data_values.price;
+
   
   const price = document.createElement('p');
-  price.textContent = "Price: " + data_values.price;
+  price.textContent = "estimate: " + data_values.estimate;
 
- 
+  
 
   seg_div.appendChild(img);
   seg_div.appendChild(title);
   seg_div.appendChild(date);
   seg_div.appendChild(category);
   seg_div.appendChild(place);
-  seg_div.appendChild(capacity)
-  seg_div.appendChild(estimate)
+  seg_div.appendChild(capacity);
+  seg_div.appendChild(estimate);
   seg_div.appendChild(price);
+  seg_div.appendChild(assistance);
   
 
 
