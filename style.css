@@ -140,7 +140,7 @@ form{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 30%;
+    height: 35%;
     margin-top: 10%;
 } 
 form label{
@@ -155,6 +155,19 @@ form input{
     font-family: 'Times New Roman';
     text-align:left;
     width: 30%;
+}
+input#boton{
+    width: 90px;
+    margin-top: 8px;
+    margin-left: 24%;
+    padding: 5px 23px;
+    color: white;
+    font-size: 1rem;
+    background-color: #deace7;
+    border: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px #a65ba6;
+
 }
 #boton_enviar{
     margin-top: 1%;
