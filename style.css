@@ -221,3 +221,16 @@ table, th, td{
     justify-content: space-between;
     background-color: #ebacee;
 }
+
+@media screen and (min-width: 730px) and (max-width: 1023px) {
+
+    nav{
+        margin-left: -25%;
+        margin-top: 2%;
+     }
+
+
+
+
+
+ }
