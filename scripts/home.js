@@ -1,14 +1,13 @@
 const divPrincipal = document.querySelector(".all_box");
-
 // RADIO BUTTON
 let filtrosPagina = document.querySelectorAll(".categorias input")
+
 // evento que escucha si el boton fue clickeado
-filtrosPagina.forEach(filtro => filtro.addEventListener('change',verificarSelect))
+filtrosPagina.forEach(filtro => filtro.addEventListener('change',verificar))
 
 // filtra data si el valor que le paso a la funcion cumple la condicion
 function filtrarBotton(valor){
   let filtro = data.events.filter(elements => elements.category.toLowerCase() == valor.toLowerCase())
-
   return filtro
   }
 
@@ -17,32 +16,49 @@ function filtrarBotton(valor){
     arr.forEach(item => {
       let seg_div = document.createElement('div');
       seg_div.classList.add('box');
-      seg_div.style.height= "520px";
+      seg_div.style.width="400px";
+      seg_div.style.height= "380px";
       seg_div.style.textAlign="center";
       seg_div.style.fontFamily="time new roman";
 
+      seg_div.id = item.category
       img = document.createElement("img");
       img.src = item.image;
-      seg_div.appendChild(img);
 
       title = document.createElement('h2');
       title.textContent = item.name;
       title.style.fontFamily="time new roman";
       title.style.margin="2px";
- 
+
+      verMas = document.createElement('a');
+      verMas.innerHTML = '<a href="./Details.html?id=' + item._id + '">Ver Mas</a>';
+  
       seg_div.appendChild(img);
       seg_div.appendChild(title);
-      
-      divPrincipal.appendChild(seg_div)
+      seg_div.appendChild(verMas);
 
+      divPrincipal.appendChild(seg_div)
     });
 }
-// funcion que llama a las restantes para verificar y traer los resultados
-function verificarSelect(){
 
-  let seleccionado = Array.from(filtrosPagina).filter(valor => valor.checked || valor.id == 'texto')[0]
-
-  botonesFiltrados = filtrarBotton(seleccionado.value)
-  crearCards(botonesFiltrados)
+function limpiarHTML(value){
+  divPrincipal.querySelectorAll('.box').forEach(card =>{
+    if(card.id == value){
+      divPrincipal.removeChild(card)
+    }
+  })
 }
 
+let listaElementos = []
+
+function verificar(e){
+  if(listaElementos.includes(e.target.value)){
+    index = listaElementos.indexOf(e.target.value);
+    listaElementos.splice(index, 1);    
+    limpiarHTML(e.target.value)
+  }else if(e.target.checked){
+    listaElementos.push(e.target.value)
+  }
+  result = listaElementos.map(filtrarBotton)
+  result.map(crearCards)
+}
