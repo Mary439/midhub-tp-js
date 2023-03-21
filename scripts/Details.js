@@ -1,4 +1,8 @@
-console.log([document])
+let urlAPI = "https://mindhub-xj03.onrender.com/api/amazing";
+
+fetch(urlAPI).then(response => response.json())
+.then(data =>{
+
 let query = location.search  
 console.log(query)
 
@@ -24,3 +28,4 @@ categorias.innerHTML =`<div class="box" style="display:inline; width:80%; height
 <p>Price: $ ${resultado.price}</p>
 <a href="./index.html">Volver</a>
 </div>`
+})
