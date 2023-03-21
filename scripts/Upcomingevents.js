@@ -1,10 +1,15 @@
+let urlAPI = "https://mindhub-xj03.onrender.com/api/amazing";
+
+fetch(urlAPI).then(response => response.json())
+.then(data =>{
+  let events = data.events.filter(x => x.date < data.currentDate)
+
+
 let divPrincipal = document.querySelector(".all_box");
 // inicializo lista vacia
 let listaElementos = []
 
-const events = data.events
 crearCards(events)
-
 
 function extraerNombres(clases){
   let nombre = []
@@ -91,7 +96,7 @@ function pruebaFiltro(entrada){
 
 // filtra data si el valor que le paso a la funcion cumple la condicion
 function filtrarInfo(valor){
-  let filtro = events.filter(elements => elements.category.toLowerCase() == valor.toLowerCase() && elements.date <= data.currentDate)
+  let filtro = events.filter(x => x.category.toLowerCase() == valor.toLowerCase())
   return filtro
 }
   // muestra la información de los elementos que cumplieron la condición
@@ -123,4 +128,4 @@ function filtrarInfo(valor){
       divPrincipal.appendChild(seg_div)
     });
 }
-  
+})
