@@ -1,8 +1,14 @@
+let urlAPI = "https://mindhub-xj03.onrender.com/api/amazing";
+
+fetch(urlAPI).then(response => response.json())
+.then(data =>{
+  let events = data.events
+
 let divPrincipal = document.querySelector(".all_box");
 // inicializo lista vacia
 let listaElementos = []
 
-const events = data.events
+// const events = data.events
 crearCards(events)
 
 
@@ -123,10 +129,8 @@ function filtrarInfo(valor){
       divPrincipal.appendChild(seg_div)
     });
 }
-  
-        
-
-
-
-
-
+})
+try{ 
+}catch (error) {
+  console.log(error.message);
+}
