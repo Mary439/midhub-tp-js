@@ -105,22 +105,12 @@ main{
     transform: translateY(-10px);
     box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
 }
-.container .box h2{
-    font-size: large;
-    font-family: Arial;
+p{
+    text-align: left;
+    margin-left: 50px;
+}
 
- }
-.container .box p{
-    font-size: 10px;
-    font-family: 'Times New Roman', Times, serif;
-}
-.container .box a{
-    font-weight: 15px;
-    text-decoration: none;
-    color: #3498;
-}
-/**fin sec/cards**/
-*{
+* {
     align-items: center;
 }
 
@@ -222,15 +212,3 @@ table, th, td{
     background-color: #ebacee;
 }
 
-@media screen and (min-width: 730px) and (max-width: 1023px) {
-
-    nav{
-        margin-left: -25%;
-        margin-top: 2%;
-     }
-
-
-
-
-
- }
