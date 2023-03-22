@@ -105,19 +105,22 @@ function filtrarInfo(valor){
     arr.forEach(item => {
       let seg_div = document.createElement('div');
       seg_div.classList.add('box');
-      seg_div.style.width="400px";
-      seg_div.style.height= "380px";
+      seg_div.style.width="240px";
+      seg_div.style.height= "372px";
       seg_div.style.textAlign="center";
+      seg_div.style.marginBottom="20px";
       seg_div.style.fontFamily="time new roman";
 
       seg_div.id = item.category
       img = document.createElement("img");
+      
       img.src = item.image;
 
       title = document.createElement('h2');
       title.textContent = item.name;
       title.style.fontFamily="time new roman";
-      title.style.margin="2px";
+      title.style.margin="3px";
+      
 
       verMas = document.createElement('a');
       verMas.innerHTML = '<a href="./Details.html?id=' + item._id + '">Ver Mas</a>';
