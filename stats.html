@@ -15,7 +15,7 @@
             </div>
             <nav>
                 <a href="./index.html" class="barra-navegacion">Home</a>
-                <a href="./upcomingevents" class="barra-navegacion">Upcoming Events</a>
+                <a href="./upcomingevents.html" class="barra-navegacion">Upcoming Events</a>
                 <a href="./pastevents.html" class="barra-navegacion">Past Events</a>
                 <a href="./contact.html" class="barra-navegacion">Contact</a>
                 <a href="./stats.html" class="barra-navegacion">stats</a>
@@ -30,85 +30,51 @@
                 <img src="imagenestk1JS/icons8-double-right-30.png" alt="">
             </a>    
         </div>
+        
         <table>
-            <thead class="title_table">
+            <!-- primeraTabla -->
+            <thead>
+              <tr>
+                <th colspan="3">Estadistica de Eventos</th>
+              </tr>
+            </thead>
+            <tr>
+                <td>Evento con mayor Porcentaje de Asistentes</td>
+                <td>Eventos con menor Porcentaje de Asistentes</td>     
+                <td>Eventos con mayor capacidad</td>          
+            </tr>
+            <tbody class="primeraTabla">
+            </tbody>
+            <!-- SegundaTabla -->
+            <thead>
                 <tr>
-                    <th colspan="3" rowspan="2">Estadísticas de eventos</th>
+                  <th colspan="3">Upcoming Events</th>
                 </tr>
             </thead>
-            <tbody>
+            <tr>
+                <td>Categories</td>
+                <td>Revenues</td>     
+                <td>Porcentaje</td>          
+            </tr>
+            <tbody class="segundaTabla"></tbody>
+             <!-- TerceraTabla -->
+             <thead>
                 <tr>
-                    <td>Events whit the highestpercentaje of attendance</td>
-                    <td>events whit the lowest porcentage of attendance </td>
-                    <td>Events whith larger capacity</td>
+                  <th colspan="3">Past Events</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            <thead class="title_table">
-                <th colspan="3" rowspan="2">
-                    Próximos eventos Estadísticas por categoría
-                </th>
             </thead>
-                <tr>
-                    <td>Categories</td>
-                    <td>revenues</td>
-                    <td>porcentaje of attendance</td>
-                </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-            <thead class="title_table">
-                <th colspan="3" rowspan="2">
-                    Estadística de eventos pasados por categoría
-                </th>
-            </thead>
-                    <tr>
-                        <td>Categories </td>
-                        <td>revenues</td>
-                        <td>pagrcentaje of attendance</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                         <td></td>
-                         <td></td>
-                         <td></td>
-                    </tr>
-            <tbody>
+            <tr>
+                <td>Categories</td>
+                <td>Revenues</td>     
+                <td>Porcentaje</td>          
+            </tr>
+            <tbody class="terceraTabla"></tbody>
+
+
+
+
         </table>
+
              <!-- FIN SECCION DE CARDS -->
             <footer class="pie_pagina">
                 <a href="https://es-la.facebook.com/"><img src="logos/icons8-facebook-48.png" alt="facebook"></a>
@@ -116,5 +82,6 @@
                 <a href="https://web.whatsapp.com/"><img src="logos/icons8-whatsapp-48.png" alt="whatsapp"></a>
                 <h3>Cohort</h3>
             </footer>
+            <script src="./scripts/stats.js"></script>
         </body>
 </html>
