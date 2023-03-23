@@ -68,7 +68,7 @@ function loadTabla(datoEventos, tabla) {
     Object.keys(datoEventos).forEach(valor =>
         tableBodyHTML += `<tr>
         <td>${valor}</td>
-        <td>${datoEventos[valor]['price']}</td>
+        <td>$ ${datoEventos[valor]['revenue']}</td>
         <td>${datoEventos[valor]['atendance']}%</td>
         </tr>`);
     tabla.innerHTML = tableBodyHTML
@@ -86,13 +86,18 @@ function obtenerDatos(filtro, time){
                 'price': element.price,
                 'capacity': element.capacity, 
                 'estimate': element.estimate,
-                'assistance': element.assistance
+                'assistance': element.assistance,
+                
+                'revenue_upcoming': element.estimate * element.price,
+                'revenue_past': element.assistance * element.price,
             }
         }else{
-             dicEventos[element.category]['price'] += element.price
+            dicEventos[element.category]['price'] += element.price
             dicEventos[element.category]['capacity'] += element.capacity
             dicEventos[element.category]['estimate'] += element.estimate
             dicEventos[element.category]['assistance'] += element.assistance
+            dicEventos[element.category]['revenue_upcoming'] += element.estimate * element.price
+            dicEventos[element.category]['revenue_past'] += element.assistance * element.price
 
         }
 
@@ -100,8 +105,11 @@ function obtenerDatos(filtro, time){
     Object.keys(dicEventos).forEach(element =>{
         if (time === 'past'){
             dicEventos[element]['atendance']= (dicEventos[element]['assistance'] * 100) / dicEventos[element]['capacity']
-        }else if(time=== 'upcoming'){
+            dicEventos[element]['revenue'] = dicEventos[element]['revenue_past']
+        }else if(time === 'upcoming'){
             dicEventos[element]['atendance']= (dicEventos[element]['estimate'] * 100) / dicEventos[element]['capacity']
+            dicEventos[element]['revenue'] = dicEventos[element]['revenue_upcoming']
+
         }
     })
     return dicEventos
