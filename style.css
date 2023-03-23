@@ -3,6 +3,7 @@ body, html{
     margin: 0;
     text-decoration: none;
     background-color: #f7f1f4;
+   
  }
 
 /**inicio header**/
@@ -12,6 +13,7 @@ header{
     align-items: center;
     width: 100%;
     height: 70px;
+    
 }
 #logo img{
     width: 30%;
@@ -64,6 +66,7 @@ main{
     font-family: sans-serif;
     letter-spacing: 0.03em;
     line-height: 1.6;
+    
 }
 
 .nav_home{
@@ -180,6 +183,8 @@ footer{
     width: 100%;
     height:20%;
     background-color: rgb(233, 171, 244);
+    min-width: 250px;
+    
  }
 
 footer img{ 

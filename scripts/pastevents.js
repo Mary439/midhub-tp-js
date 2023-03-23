@@ -2,7 +2,7 @@ let urlAPI = "https://mindhub-xj03.onrender.com/api/amazing";
 
 fetch(urlAPI).then(response => response.json())
 .then(data =>{
-  let events = data.events.filter(x => x.date >= data.currentDate)
+  let events = data.events.filter(x => x.date < data.currentDate)
 
 
 let divPrincipal = document.querySelector(".all_box");
